@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gianluca Orsatti</title>
+<meta property="og:title" content="Gianluca Orsatti">
+<meta property="og:description" content="Tenure-track Assistant Professor of Economic Policy, University of Turin. Research on innovation, technological change, green technologies, patents and intangible assets.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231B6A4D'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%23fff' text-anchor='middle'%3EGO%3C/text%3E%3C/svg%3E">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<meta name="description" content="Gianluca Orsatti, Tenure-track Assistant Professor of Economic Policy, University of Turin. Research on innovation, technological change, green technologies, patents and intangible assets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* Layout: a fixed identity rail (portrait, name, nav, contacts) beside one reading column;
+   on phones the rail stacks on top and the nav becomes a sticky tab strip.
+   Subject detail: research topics are labelled with their JEL classification codes. */
+:root {
+  --bg: #F3F5F4;
+  --surface: #FFFFFF;
+  --ink: #15201B;
+  --muted: #55645D;
+  --faint: #84928C;
+  --rule: #D8DFDB;
+  --accent: #1B6A4D;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E0EDE7;
+  --status: #8A5A12;
+  --status-soft: #F4E9D5;
+
+  --f-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-3: 2rem;
+  --step-4: 2.5rem;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1412; --surface: #151D1A; --ink: #E3EAE6; --muted: #A1AFA9; --faint: #6F7E78;
+    --rule: #25312C; --accent: #6DC6A0; --accent-ink: #0E1412; --accent-soft: #172D25;
+    --status: #E2B66C; --status-soft: #30261A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1412; --surface: #151D1A; --ink: #E3EAE6; --muted: #A1AFA9; --faint: #6F7E78;
+  --rule: #25312C; --accent: #6DC6A0; --accent-ink: #0E1412; --accent-soft: #172D25;
+  --status: #E2B66C; --status-soft: #30261A;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.005em; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.shell {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  gap: 72px;
+  padding-left: var(--gutter-l);
+  padding-right: var(--gutter-r);
+  padding-block: 56px 48px;
+}
+
+/* ---------- identity rail ---------- */
+.rail {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 40px);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.ident { display: flex; flex-direction: column; gap: 18px; }
+.portrait {
+  width: 148px;
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--f-display);
+  font-size: 3.25rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.name { font-size: var(--step-3); line-height: 1.1; }
+.role { color: var(--muted); font-size: 0.9375rem; line-height: 1.5; }
+.role strong { color: var(--ink); font-weight: 500; display: block; }
+
+.tabs { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+.tabs a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+.tabs a .k { font-family: var(--f-mono); font-size: 0.6875rem; color: var(--faint); font-weight: 400; }
+.tabs a:hover { color: var(--ink); }
+.tabs a[aria-current="page"] { color: var(--accent); }
+.tabs a[aria-current="page"] .k { color: var(--accent); }
+
+.contact { display: flex; flex-direction: column; gap: 14px; font-size: 0.875rem; color: var(--muted); }
+.email-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.email { color: var(--ink); font-family: var(--f-mono); font-size: 0.8125rem; word-break: break-all; }
+.copy {
+  font: 500 0.75rem/1 var(--f-body);
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); }
+.addr { line-height: 1.5; }
+.profiles { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.profiles a { font-size: 0.8125rem; font-weight: 500; }
+.orcid { font-family: var(--f-mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; display: inline-flex; gap: 8px; align-items: baseline; }
+.orcid:hover { color: var(--accent); }
+.orcid-label { font-family: var(--f-body); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; color: var(--accent); }
+
+/* ---------- main column ---------- */
+main { min-width: 0; max-width: 46rem; }
+.page { display: flex; flex-direction: column; gap: 48px; }
+.page-head { display: flex; flex-direction: column; gap: 10px; }
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.page-title { font-size: var(--step-4); line-height: 1.08; }
+.lede {
+  font-family: var(--f-display);
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+.lede em { color: var(--accent); }
+.intro { display: flex; flex-direction: column; gap: 24px; }
+.prose { display: flex; flex-direction: column; gap: 14px; max-width: 65ch; color: var(--ink); }
+.prose p { text-wrap: pretty; }
+.block { display: flex; flex-direction: column; gap: 18px; }
+.block-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 8px; }
+.block-head h2 { font-size: var(--step-2); line-height: 1.2; }
+.block-head .count { font-family: var(--f-mono); font-size: 0.75rem; color: var(--faint); white-space: nowrap; }
+.more { font-weight: 500; font-size: 0.9375rem; }
+
+/* JEL chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink);
+  font: 500 0.875rem/1.3 var(--f-body);
+  text-decoration: none;
+  cursor: pointer;
+}
+.chip .code { font-family: var(--f-mono); font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+.chip .n { font-family: var(--f-mono); font-size: 0.6875rem; color: var(--faint); }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip[aria-pressed="true"] .code, .chip[aria-pressed="true"] .n { color: var(--accent-ink); }
+.filter-note { font-size: 0.8125rem; color: var(--faint); }
+
+/* publications */
+.pubs { display: flex; flex-direction: column; }
+.pub {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pub:last-child { border-bottom: 0; }
+.pub-year { font-family: var(--f-mono); font-size: 0.8125rem; color: var(--faint); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.pub-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pub-title { font-family: var(--f-display); font-size: var(--step-1); line-height: 1.3; font-weight: 500; color: var(--ink); text-wrap: pretty; }
+a.pub-title { text-decoration: none; }
+a.pub-title:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; }
+.pub-authors { font-size: 0.875rem; color: var(--muted); }
+.pub-authors b { color: var(--ink); font-weight: 600; }
+.pub-venue { font-size: 0.875rem; color: var(--muted); }
+.pub-venue i { color: var(--ink); }
+.pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 6px; }
+.tag { font-family: var(--f-mono); font-size: 0.6875rem; color: var(--faint); letter-spacing: 0.02em; }
+.btn-link {
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.btn-link:hover { border-color: var(--accent); }
+.status {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--status);
+  background: var(--status-soft);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+.abs { margin-top: 6px; font-size: 0.9375rem; color: var(--muted); }
+.abs summary { cursor: pointer; color: var(--accent); font-size: 0.8125rem; font-weight: 500; }
+.abs p { margin-top: 8px; max-width: 65ch; }
+
+/* news / timelines */
+.dated { display: flex; flex-direction: column; }
+.dated li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.dated li:last-child { border-bottom: 0; }
+.dated li.hl { background: var(--accent-soft); border-radius: 8px; border-bottom: 0; padding: 14px; margin: 6px -14px; }
+.dated li.hl .when { color: var(--accent); }
+.dated li.hl .badge { background: var(--accent); color: var(--accent-ink); margin-right: 6px; }
+.dated .when { font-family: var(--f-mono); font-size: 0.8125rem; color: var(--faint); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.dated .what { min-width: 0; }
+.dated .what strong { font-weight: 600; }
+.dated .sub { display: block; color: var(--muted); font-size: 0.875rem; }
+
+/* projects */
+.projects { display: flex; flex-direction: column; gap: 14px; }
+.project {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.project-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.funder { font-family: var(--f-mono); font-size: 0.75rem; color: var(--faint); letter-spacing: 0.02em; }
+.years { font-family: var(--f-mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.project h3 { font-size: var(--step-1); line-height: 1.3; }
+.project p { font-size: 0.9375rem; color: var(--muted); }
+.project .roleline { font-size: 0.875rem; color: var(--ink); }
+.project .roleline b { font-weight: 600; }
+.pi { color: var(--accent); }
+.project.featured { background: var(--accent-soft); border-color: var(--accent); }
+.project.featured .badge { background: var(--accent); color: var(--accent-ink); }
+
+/* teaching */
+.courses { display: flex; flex-direction: column; }
+.course {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.course:last-child { border-bottom: 0; }
+.course h3 { font-size: var(--step-1); line-height: 1.3; }
+.course .when { font-family: var(--f-mono); font-size: 0.8125rem; color: var(--muted); white-space: nowrap; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.course .det { grid-column: 1 / -1; font-size: 0.875rem; color: var(--muted); }
+.lvl { font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 6px; margin-right: 6px; }
+
+/* cv */
+.cv-grid { display: flex; flex-direction: column; gap: 40px; }
+.cv-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.cv-pdf {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 600; font-size: 0.875rem;
+  padding: 9px 16px; border-radius: 6px; text-decoration: none;
+}
+.cv-pdf:hover { filter: brightness(1.08); }
+.plain { display: flex; flex-direction: column; gap: 8px; }
+.plain li { padding-left: 14px; position: relative; }
+.plain li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 5px; height: 1px; background: var(--faint); }
+.journals { font-size: 0.9375rem; color: var(--muted); line-height: 1.7; }
+.journals i { color: var(--ink); }
+
+footer.foot {
+  grid-column: 2;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  font-size: 0.8125rem;
+  color: var(--faint);
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+
+/* ---------- phones & small tablets ---------- */
+@media (max-width: 880px) {
+  .shell { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: 28px 32px; }
+  .rail { display: contents; }
+  .ident { flex-direction: row; align-items: center; gap: 16px; order: 1; margin-bottom: 18px; }
+  .portrait { width: 76px; font-size: 1.75rem; flex: none; }
+  .name { font-size: 1.625rem; }
+  .role { font-size: 0.875rem; }
+  .tabs {
+    order: 2;
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    flex-direction: row;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-left: calc(-1 * var(--gutter-l));
+    margin-right: calc(-1 * var(--gutter-r));
+    padding-left: var(--gutter-l);
+    padding-right: var(--gutter-r);
+    margin-bottom: 32px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { border-bottom: 2px solid transparent; padding: 12px 0 10px; white-space: nowrap; flex: none; }
+  .tabs a .k { display: none; }
+  .tabs a[aria-current="page"] { border-bottom-color: var(--accent); }
+  main { order: 3; max-width: none; }
+  .contact { order: 4; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--ink); }
+  footer.foot { order: 5; grid-column: 1; margin-top: 28px; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+  .lede { font-size: 1.4375rem; }
+  .page-title { font-size: var(--step-3); }
+}
+@media (max-width: 480px) {
+  .pub { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .dated li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .course { grid-template-columns: minmax(0, 1fr); }
+  .course .when { padding-top: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .page:not([hidden]) { animation: rise 0.28s ease-out both; }
+  @keyframes rise { from { opacity: 0.4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <aside class="rail" aria-label="Profile">
+    <div class="ident">
+      <div class="portrait" id="portrait"><img src="data:image/jpeg;base64,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" alt="Gianluca Orsatti" width="400" height="400"></div>
+      <div>
+        <h1 class="name">Gianluca Orsatti</h1>
+        <p class="role"><strong>Tenure-track Assistant Professor of Economic Policy</strong>University of Turin</p>
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Sections">
+      <a href="#home" data-tab="home">About <span class="k">01</span></a>
+      <a href="#research" data-tab="research">Research <span class="k">02</span></a>
+      <a href="#projects" data-tab="projects">Projects <span class="k">03</span></a>
+      <a href="#teaching" data-tab="teaching">Teaching <span class="k">04</span></a>
+    </nav>
+
+    <div class="contact">
+      <div class="email-row">
+        <span class="email" id="email">gianluca.orsatti [at] unito.it</span>
+        <button class="copy" id="copyEmail" type="button">Copy</button>
+      </div>
+      <p class="addr">Department of Economics and Statistics “Cognetti de Martiis”<br>Campus Luigi Einaudi, Lungo Dora Siena 100A<br>10153 Torino, Italy</p>
+      <div class="profiles">
+        <a href="https://www.est-en.unito.it/do/docenti.pl/Show?_id=gorsatti#tab-profilo" target="_blank" rel="noopener">UniTo page</a>
+        <a href="https://scholar.google.it/citations?user=ePqdgyAAAAAJ&amp;hl=it" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://brick.carloalberto.org/" target="_blank" rel="noopener">BRICK · Collegio Carlo Alberto</a>
+      </div>
+      <a class="orcid" href="https://orcid.org/0009-0006-0018-8543" target="_blank" rel="noopener"><span class="orcid-label">ORCID</span> 0009-0006-0018-8543</a>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- ================= ABOUT ================= -->
+    <section class="page" id="page-home" data-page="home" aria-label="About">
+      <div class="intro">
+      <p class="lede">I study the <em>drivers</em> of technological change and its <em>impacts</em> on the broader economy.</p>
+
+      <div class="prose">
+        <p>I am a Tenure-track Assistant Professor (RTD-B) of Economic Policy at the Department of Economics and Statistics “Cognetti de Martiis”, University of Turin, and a Fellow of BRICK at Collegio Carlo Alberto.</p>
+        <p>My current work covers green and circular-economy innovation, the direction of technological change and the rise of intangible assets, patents and intellectual property, critical raw materials, and the labor-market effects of technological change. My research has appeared in <i>Research Policy</i>, <i>Economics of Innovation and New Technology</i>, <i>Small Business Economics</i>, <i>Industrial and Corporate Change</i>, <i>Environmental and Resource Economics</i>, <i>Regional Studies</i>, <i>Eurasian Business Review</i>, <i>Industry and Innovation</i>, <i>The Journal of Technology Transfer</i>, and <i>Journal of Evolutionary Economics</i>.</p>
+        <p>I received my PhD in Economics from the Vilfredo Pareto Doctorate (University of Turin and Collegio Carlo Alberto) in 2018, and was a postdoctoral researcher at the University of Bordeaux before joining the Department as an Assistant Professor in 2020. I currently serve as the Department’s Deputy Director for Third Mission and Public Engagement.</p>
+      </div>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h2>Research areas</h2><span class="count">JEL codes</span></div>
+        <div class="chips" id="homeTopics"></div>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h2>Selected publications</h2><a class="more" href="#research">All research →</a></div>
+        <ol class="pubs" id="selectedPubs"></ol>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h2>Recent</h2></div>
+        <ul class="dated">
+          <li class="hl"><span class="when">Oct 2026</span><span class="what"><span class="badge">New grant</span> Awarded the PRIN project <strong>CIRCE-DATA – Circular Economy Data, Models and Indicators for Transition Analytics</strong> (2026PKE93N). <a href="#projects">See projects</a></span></li>
+          <li><span class="when">Sep 2026</span><span class="what">Co-organised <strong>EPIP 2026</strong>, the conference of the European Policy for Intellectual Property Association, hosted by Politecnico di Torino and the University of Turin.</span></li>
+          <li><span class="when">Jun 2026</span><span class="what">New working paper: <strong>Trade in critical raw materials and the direction of innovation</strong>, LEI &amp; BRICK Working Paper Series.</span></li>
+          <li><span class="when">2026</span><span class="what">Published in <i>Research Policy</i>: <a href="https://doi.org/10.1016/j.respol.2026.105434" target="_blank" rel="noopener">Green diversification, global knowledge sourcing and local skill composition: Evidence from the US</a>.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH ================= -->
+    <section class="page" id="page-research" data-page="research" aria-label="Research" hidden>
+      <div class="page-head">
+        <span class="eyebrow" id="researchSummary">Research</span>
+        <h2 class="page-title">Research</h2>
+      </div>
+
+      <div class="block">
+        <div class="chips" id="filters" role="group" aria-label="Filter by research area"></div>
+        <p class="filter-note" id="filterNote">Filter by research area. Codes follow the JEL classification.</p>
+      </div>
+
+      <div class="block" data-cat="journal">
+        <div class="block-head"><h2>Publications in refereed journals</h2><span class="count"></span></div>
+        <ol class="pubs"></ol>
+      </div>
+      <div class="block" data-cat="review">
+        <div class="block-head"><h2>Under review</h2><span class="count"></span></div>
+        <ol class="pubs"></ol>
+      </div>
+      <div class="block" data-cat="progress">
+        <div class="block-head"><h2>Work in progress</h2><span class="count"></span></div>
+        <ol class="pubs"></ol>
+      </div>
+      <div class="block" data-cat="chapter">
+        <div class="block-head"><h2>Book chapters</h2><span class="count"></span></div>
+        <ol class="pubs"></ol>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="page" id="page-projects" data-page="projects" aria-label="Projects" hidden>
+      <div class="page-head">
+        <span class="eyebrow">Funded research</span>
+        <h2 class="page-title">Projects</h2>
+      </div>
+
+      <div class="projects">
+        <article class="project featured">
+          <div class="project-top"><span class="funder">PRIN · Italian Ministry of University and Research · Prot. 2026PKE93N</span><span class="years">Awarded 2026</span></div>
+          <h3>CIRCE-DATA – Circular Economy Data, Models and Indicators for Transition Analytics</h3>
+          <p class="roleline"><span class="badge">New</span></p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">PNRR · Extended Partnership</span><span class="years">2024–2026</span></div>
+          <h3>GRINS – Growing Resilient, INclusive and Sustainable</h3>
+          <p>Theme 9, “Economic and financial sustainability of systems and territories”. Spoke 5: Innovation ecosystems for the circular economy.</p>
+          <p class="roleline">Role: <b>Senior Researcher</b></p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">PRIN PNRR 2022 · Italian Ministry of University and Research</span><span class="years">2024–2026</span></div>
+          <h3>Circular Economy Innovation and the socio-economic impacts on sectors and regions</h3>
+          <p class="roleline">Role: <b>Senior Researcher</b></p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">PRIN 2022 · Italian Ministry of University and Research</span><span class="years">2024–2026</span></div>
+          <h3>Innovation and labor market dynamics</h3>
+          <p class="roleline">Role: <b>Senior Researcher</b></p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">EU Horizon 2020</span><span class="years">2023–2025</span></div>
+          <h3>IN-HABIT – INclusive Health And wellBeing In small and medium size ciTies</h3>
+          <p class="roleline">Role: <b>Senior Expert</b>, impact evaluation analysis</p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">PRIN 2017 · Prot. 20177J2LS9</span><span class="years">2020–2024</span></div>
+          <h3>Innovation and global challenges in an interconnected world: the role of local resources and socio-economic conditions</h3>
+          <p class="roleline">Role: <b>Assistant Professor (RTD-A)</b> on the project, Dec 2020 – Dec 2023</p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">VisitINPS Scholars, Type B · INPS</span><span class="years">2019–</span></div>
+          <h3>Job displacement, skills matching and earnings: Evidence from the 1987 Italian nuclear power referendum</h3>
+          <p class="roleline">Role: <b class="pi">Principal Investigator</b></p>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="funder">French National Research Agency · ANR JCJC</span><span class="years">2018–2019</span></div>
+          <h3>NPEIE – Non-Practicing Entities and Innovation in Europe</h3>
+          <p class="roleline">Role: <b>Postdoctoral Researcher</b>, University of Bordeaux · <a href="http://npeie.org/" target="_blank" rel="noopener">npeie.org</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= TEACHING ================= -->
+    <section class="page" id="page-teaching" data-page="teaching" aria-label="Teaching" hidden>
+      <div class="page-head">
+        <span class="eyebrow">University of Turin</span>
+        <h2 class="page-title">Teaching</h2>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h2>Current courses</h2></div>
+        <div class="courses">
+          <div class="course">
+            <h3>Innovation, Labor Market Dynamics and Inequalities</h3>
+            <span class="when">2024–</span>
+            <p class="det"><span class="lvl">MSc</span>Course leader · 40 hours · taught in English</p>
+          </div>
+          <div class="course">
+            <h3>Global Economy and Multinational Corporations</h3>
+            <span class="when">2022–</span>
+            <p class="det"><span class="lvl">MSc</span>Course leader · 54 hours · taught in English</p>
+          </div>
+          <div class="course">
+            <h3>Economics and Management of Innovation and New Technologies</h3>
+            <span class="when">2023–</span>
+            <p class="det"><span class="lvl">PhD</span>Module (16 hours) · PhD Program in Innovation for the Circular Economy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-head"><h2>Previous courses</h2></div>
+        <div class="courses">
+          <div class="course">
+            <h3>Principles of Economics <span style="color:var(--muted);font-weight:400">(Economia Politica)</span></h3>
+            <span class="when">2021–2024</span>
+            <p class="det"><span class="lvl">BA</span>Co-instructor · 2021/22, 2023, 2024</p>
+          </div>
+          <div class="course">
+            <h3>Microeconomics <span style="color:var(--muted);font-weight:400">(Microeconomia)</span></h3>
+            <span class="when">2021/22</span>
+            <p class="det"><span class="lvl">BA</span>Course leader</p>
+          </div>
+          <div class="course">
+            <h3>Economics of the Digital Age <span style="color:var(--muted);font-weight:400">(Economia dell’Età Digitale)</span></h3>
+            <span class="when">2020</span>
+            <p class="det"><span class="lvl">BA</span>Course leader</p>
+          </div>
+          <div class="course">
+            <h3>Introductory Econometrics</h3>
+            <span class="when">2018/19</span>
+            <p class="det"><span class="lvl">BA</span>Teaching assistant · University of Bordeaux · taught in French</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 Gianluca Orsatti</span>
+    <span>Last updated October 2026</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  /* ---------- settings you may want to change ---------- */
+  var ME = "Orsatti, G.";
+
+  /* ---------- research areas (JEL codes) ---------- */
+  var TOPICS = [
+    { code: "Q55", label: "Green innovation" },
+    { code: "O33", label: "Technological change & intangibles" },
+    { code: "O34", label: "Patents & IP" },
+    { code: "J24", label: "Skills & labor markets" },
+    { code: "R11", label: "Regional innovation" },
+    { code: "L26", label: "Entrepreneurship" },
+    { code: "Q3",  label: "Critical raw materials" }
+  ];
+
+  /* ---------- publications ----------
+     cat: journal | review | wp | progress | chapter
+     Add an "abstract" field to any entry to show an expandable abstract. */
+  var PUBS = [
+    { cat: "journal", year: 2026, selected: true, authors: "Scandura, A., Orsatti, G., Quatraro, F., Fusillo, F. & Bergamini, E.", title: "Green diversification, global knowledge sourcing and local skill composition: Evidence from the US", venue: "Research Policy", det: "55(4), 105434", doi: "10.1016/j.respol.2026.105434", tags: ["Q55", "J24", "R11"] },
+    { cat: "journal", year: 2025, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "Corporations as platforms and equity-based knowledge outsourcing", venue: "Economics of Innovation and New Technology", doi: "10.1080/10438599.2025.2536590", tags: ["O33"] },
+    { cat: "journal", year: 2025, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "The paradox of the productivity slowdown in the knowledge economy", venue: "Industrial and Corporate Change", det: "34(6), 1267–1279", doi: "10.1093/icc/dtaf040", tags: ["O33"] },
+    { cat: "journal", year: 2025, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "The capital saving, intangible, and skill intensive direction of technological change in Europe", venue: "Economics of Innovation and New Technology", det: "35(6), 1265–1283", doi: "10.1080/10438599.2025.2540409", tags: ["O33"] },
+    { cat: "journal", year: 2025, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "Out-of-equilibrium and intangible assets", venue: "Journal of Evolutionary Economics", det: "35(1), 123–156", doi: "10.1007/s00191-025-00890-0", tags: ["O33"] },
+    { cat: "journal", year: 2025, authors: "Fusillo, F., Orsatti, G. & Scandura, A.", title: "Public green demand and green innovation: Evidence from US firms", venue: "Eurasian Business Review", doi: "10.1007/s40821-025-00304-y", tags: ["Q55"] },
+    { cat: "journal", year: 2024, authors: "Sterzi, V., Maronero, C., Orsatti, G. & Vezzulli, A.", title: "Non-practicing entities in Europe: An empirical analysis of patent acquisitions at the European Patent Office", venue: "Industrial and Corporate Change", det: "33(5), 1271–1297", doi: "10.1093/icc/dtae010", tags: ["O34"] },
+    { cat: "journal", year: 2023, selected: true, authors: "Orsatti, G.", title: "Government R&D and green technology spillovers: The Chernobyl disaster as a natural experiment", venue: "The Journal of Technology Transfer", det: "49(2), 581–608", doi: "10.1007/s10961-023-10000-6", tags: ["Q55"] },
+    { cat: "journal", year: 2023, authors: "Orsatti, G. & Sterzi, V.", title: "Patent assertion entities and follow-on innovation: Evidence from patent acquisitions at the USPTO", venue: "Industry and Innovation", doi: "10.1080/13662716.2023.2213170", tags: ["O34"] },
+    { cat: "journal", year: 2023, authors: "Orsatti, G., Quatraro, F. & Scandura, A.", title: "Green technological diversification and regional recombinant capabilities: The role of technological novelty and academic inventors", venue: "Regional Studies", doi: "10.1080/00343404.2023.2176476", tags: ["Q55", "R11"] },
+    { cat: "journal", year: 2023, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "The knowledge-intensive direction of technological change", venue: "Eurasian Business Review", det: "13(1), 1–27", doi: "10.1007/s40821-022-00234-z", tags: ["O33"] },
+    { cat: "journal", year: 2022, authors: "Antonelli, C., Orsatti, G. & Pialli, G.", title: "The effects of the limited exhaustibility of knowledge on firm size and the direction of technological change", venue: "The Journal of Technology Transfer", doi: "10.1007/s10961-022-09969-3", tags: ["O33"] },
+    { cat: "journal", year: 2022, authors: "Montresor, S., Orsatti, G. & Quatraro, F.", title: "Technological novelty and key enabling technologies: Evidence from European regions", venue: "Economics of Innovation and New Technology", det: "32(6), 851–872", doi: "10.1080/10438599.2022.2038147", tags: ["O33", "R11"] },
+    { cat: "journal", year: 2021, authors: "Consoli, D., Fusillo, F., Orsatti, G. & Quatraro, F.", title: "Skill endowment, routinisation and digital technologies: Evidence from U.S. metropolitan areas", venue: "Industry and Innovation", det: "28(8), 1017–1045", doi: "10.1080/13662716.2021.1904842", tags: ["J24", "R11"], badge: "30th Anniversary Collection" },
+    { cat: "journal", year: 2021, authors: "Colombelli, A., Orsatti, G. & Quatraro, F.", title: "Local knowledge composition and the emergence of entrepreneurial activities across industries: Evidence from Italian NUTS-3 regions", venue: "Small Business Economics", det: "56(2), 613–635", doi: "10.1007/s11187-019-00192-3", tags: ["L26", "R11"] },
+    { cat: "journal", year: 2020, selected: true, authors: "Orsatti, G., Quatraro, F. & Pezzoni, M.", title: "The antecedents of green technologies: The role of team-level recombinant capabilities", venue: "Research Policy", det: "49(3), 103919", doi: "10.1016/j.respol.2019.103919", tags: ["Q55"] },
+    { cat: "journal", year: 2020, authors: "Orsatti, G., Perruchas, F., Consoli, D. & Quatraro, F.", title: "Public procurement, local labor markets and green technological change: Evidence from US commuting zones", venue: "Environmental and Resource Economics", det: "75(4), 711–739", doi: "10.1007/s10640-020-00405-4", tags: ["Q55", "J24"] },
+
+    { cat: "review", authors: "Orsatti, G. & Pialli, G.", title: "Bind me as tight as you can: Employment protection and the rise of intangible assets", status: "Under review", tags: ["O33", "J24"] },
+    { cat: "review", authors: "Coda Zabetta, M., Fusillo, F., Orsatti, G., Quatraro, F. & Scandura, A.", title: "Science-based co-creation of circular eco-innovation in Europe", status: "Under review", tags: ["Q55"] },
+    { cat: "review", authors: "Rentocchini, F., Vezzani, A., Montresor, S. & Orsatti, G.", title: "Walking the green line: Government-sponsored R&D and clean technologies in the US", status: "Under review", tags: ["Q55"] },
+    { cat: "review", authors: "Fusillo, F., Orsatti, G., Quatraro, F. & Tomas-Porres, J.", title: "Price shocks, exposure to critical raw materials and innovation", status: "Under review", tags: ["Q3"] },
+
+    { cat: "review", status: "Under review", authors: "Fusillo, F., Orsatti, G., Pialli, G., Quatraro, F. & Scandura, A.", title: "Trade in critical raw materials and the direction of innovation", venue: "LEI & BRICK Working Paper Series", det: "June 2026", tags: ["Q3"] },
+    { cat: "review", status: "Under review", authors: "Orsatti, G., Pialli, G. & Quatraro, F.", title: "The skill requirements of the circular economy through job advertisements: Evidence from Italy", venue: "LEI & BRICK Working Paper Series", det: "May 2026", tags: ["Q55", "J24"] },
+
+    { cat: "progress", authors: "Orsatti, G.", title: "Standing down: Defense R&D retrenchment and the reorganization of America’s industrial laboratories", tags: ["O33"] },
+    { cat: "progress", authors: "Orsatti, G.", title: "When two elephants fight, it is the grass that suffers: The effects of patent litigation on patent examination", tags: ["O34"] },
+    { cat: "progress", authors: "Orsatti, G.", title: "Small business lending and disruptive innovation", tags: ["L26"] },
+    { cat: "progress", authors: "Orsatti, G.", title: "Where firms think: State trade secrets law and the shifting map of American research and development", tags: ["O34", "R11"] },
+    { cat: "progress", authors: "Orsatti, G. & Pialli, G.", title: "Productivity paradox and intellectual property products capital", tags: ["O33"] },
+    { cat: "progress", authors: "Orsatti, G. & Sterzi, V.", title: "Does the Unified Patent Court harmonize enforcement? Evidence from settlement behavior", tags: ["O34"] },
+    { cat: "progress", authors: "Orsatti, G., Pialli, G. & Quatraro, F.", title: "The material syndrome: Critical raw materials and US local labor markets", tags: ["Q3", "J24"] },
+    { cat: "progress", authors: "Orsatti, G., Quatraro, F. & Rubichi, E.", title: "Navigating the climate risk: Investor perceptions and green innovation", tags: ["Q55"] },
+    { cat: "progress", authors: "Orsatti, G., Quatraro, F. & Rubichi, E.", title: "Climate risk, vertical integration and innovation", tags: ["Q55"] },
+    { cat: "progress", authors: "Antonelli, C., Orsatti, G., Quatraro, F. & Tomas-Porres, J.", title: "The (hidden) value of knowledge: Evidence from a natural experiment", tags: ["O33"] },
+    { cat: "progress", authors: "Chakravarty, S., Orsatti, G. & Pialli, G.", title: "Are radical ideas getting harder to find?", tags: ["O33"] },
+    { cat: "progress", authors: "Colombelli, A., Orsatti, G., Quatraro, F. & Tubiana, M.", title: "Promoting innovative startups’ growth: Evidence from the Italian Smart&Start incentive scheme", tags: ["L26"] },
+    { cat: "progress", authors: "Intraligi, V., Orsatti, G. & Quatraro, F.", title: "Implementazione del PNRR, capacità delle imprese e disuguaglianze nella transizione verde e digitale", note: "in Italian", tags: ["Q55"] },
+    { cat: "progress", authors: "Mirenzi, V., Orsatti, G., Pialli, G. & Quatraro, F.", title: "Export restrictions on critical raw materials and the direction of inventive activity", tags: ["Q3"] },
+
+    { cat: "chapter", authors: "Antonelli, C. & Orsatti, G.", title: "Knowledge and productivity", venue: "In J. Krafft & F. Quatraro (Eds.), Handbook on the Economics and Theory of the Firm, 2nd edition", det: "Edward Elgar", status: "Forthcoming", tags: ["O33"] },
+    { cat: "chapter", year: 2026, authors: "Coda Zabetta, M., Fusillo, F., Orsatti, G., Quatraro, F. & Scandura, A.", title: "Eco-innovazione, economia circolare e dinamiche di impresa: un quadro d’insieme", venue: "In V. Costantini (Ed.), L’economia italiana e la transizione ecologica", det: "Carocci", note: "in Italian", tags: ["Q55"] },
+    { cat: "chapter", year: 2021, authors: "Orsatti, G., Quatraro, F. & Scandura, A.", title: "Regional differences in the generation of green technologies: The role of local recombinant capabilities and academic inventors", venue: "In S. R. Sedita & S. Blasi (Eds.), Rethinking Clusters: Place-based Value Creation in Sustainability Transitions", det: "Springer", doi: "10.1007/978-3-030-61923-7", tags: ["Q55", "R11"] },
+    { cat: "chapter", year: 2020, authors: "Consoli, D., Fusillo, F., Orsatti, G. & Quatraro, F.", title: "Competenze, de-routinizzazione e tecnologie digitali: un’analisi empirica delle aree metropolitane degli Stati Uniti", venue: "In M. G. Brandano, A. Faggian & G. Urso (Eds.), Oltre le crisi. Rinnovamento, ricostruzione e sviluppo dei territori", det: "FrancoAngeli", note: "in Italian", tags: ["J24", "R11"] },
+    { cat: "chapter", year: 2019, authors: "Colombelli, A., Orsatti, G. & Quatraro, F.", title: "Entrepreneurship, technological knowledge and industrial heterogeneity: Evidence from Italian NUTS 3 regions", venue: "In F. Therin, F. P. Appio & H. Yoon (Eds.), Handbook of Research on Techno-Entrepreneurial Ecosystems", det: "Edward Elgar", doi: "10.4337/9781786439079.00024", tags: ["L26", "R11"] },
+    { cat: "chapter", year: 2015, authors: "Costantini, V., Crespi, F., Orsatti, G. & Palma, A.", title: "Policy inducement effects in energy efficiency technologies: An empirical analysis of the residential sector", venue: "In A. Ansuategi, J. Delgado & I. Galarraga (Eds.), Green Energy and Efficiency: An Economic Perspective", det: "Springer", doi: "10.1007/978-3-319-03632-8_9", tags: ["Q55"] }
+  ];
+
+  var CAT_LABEL = { journal: "journal articles", review: "under review", wp: "working papers", progress: "in progress", chapter: "book chapters" };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+  }
+  function topicLabel(code) {
+    for (var i = 0; i < TOPICS.length; i++) if (TOPICS[i].code === code) return TOPICS[i].label;
+    return code;
+  }
+
+  function pubHTML(p) {
+    var link = p.doi ? "https://doi.org/" + p.doi : (p.url || "");
+    var title = link
+      ? '<a class="pub-title" href="' + esc(link) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
+      : '<span class="pub-title">' + esc(p.title) + "</span>";
+    var authors = esc(p.authors).replace(esc(ME), "<b>" + esc(ME) + "</b>");
+    var venue = "";
+    if (p.venue) {
+      venue = '<div class="pub-venue"><i>' + esc(p.venue) + "</i>" + (p.det ? ", " + esc(p.det) : "") + "</div>";
+    }
+    var meta = [];
+    if (p.status) meta.push('<span class="status">' + esc(p.status) + "</span>");
+    if (p.cat === "progress" && !p.status) meta.push('<span class="status">In preparation</span>');
+    if (p.badge) meta.push('<span class="badge">' + esc(p.badge) + "</span>");
+    if (p.doi) meta.push('<a class="btn-link" href="https://doi.org/' + esc(p.doi) + '" target="_blank" rel="noopener">DOI</a>');
+    if (p.pdf) meta.push('<a class="btn-link" href="' + esc(p.pdf) + '" target="_blank" rel="noopener">PDF</a>');
+    if (p.note) meta.push('<span class="tag">' + esc(p.note) + "</span>");
+    (p.tags || []).forEach(function (t) { meta.push('<span class="tag" title="' + esc(topicLabel(t)) + '">JEL ' + esc(t) + "</span>"); });
+    var abs = p.abstract
+      ? '<details class="abs"><summary>Abstract</summary><p>' + esc(p.abstract) + "</p></details>"
+      : "";
+    return '<li class="pub"><span class="pub-year">' + (p.year || "") + '</span><div class="pub-body">' +
+      title + '<div class="pub-authors">' + authors + "</div>" + venue +
+      '<div class="pub-meta">' + meta.join("") + "</div>" + abs + "</div></li>";
+  }
+
+  /* ---------- research page ---------- */
+  var activeTopic = "";
+  function countFor(code) {
+    return PUBS.filter(function (p) { return !code || (p.tags || []).indexOf(code) !== -1; }).length;
+  }
+  function renderFilters() {
+    var box = document.getElementById("filters");
+    var html = '<button type="button" class="chip" data-topic="" aria-pressed="' + (activeTopic === "") + '">All <span class="n">' + PUBS.length + "</span></button>";
+    TOPICS.forEach(function (t) {
+      html += '<button type="button" class="chip" data-topic="' + t.code + '" aria-pressed="' + (activeTopic === t.code) + '"><span class="code">' + t.code + "</span>" + esc(t.label) + ' <span class="n">' + countFor(t.code) + "</span></button>";
+    });
+    box.innerHTML = html;
+  }
+  function renderResearch() {
+    var blocks = document.querySelectorAll("#page-research [data-cat]");
+    blocks.forEach(function (b) {
+      var cat = b.getAttribute("data-cat");
+      var list = PUBS.filter(function (p) { return p.cat === cat && (!activeTopic || (p.tags || []).indexOf(activeTopic) !== -1); });
+      b.querySelector(".pubs").innerHTML = list.map(pubHTML).join("");
+      b.querySelector(".count").textContent = list.length;
+      b.hidden = list.length === 0;
+    });
+    var note = document.getElementById("filterNote");
+    note.textContent = activeTopic
+      ? "Showing " + countFor(activeTopic) + " items in JEL " + activeTopic + " · " + topicLabel(activeTopic) + "."
+      : "Filter by research area. Codes follow the JEL classification.";
+    var summary = [];
+    ["journal", "review", "wp", "progress", "chapter"].forEach(function (c) {
+      var n = PUBS.filter(function (p) { return p.cat === c; }).length;
+      if (n) summary.push(n + " " + CAT_LABEL[c]);
+    });
+    document.getElementById("researchSummary").textContent = summary.join(" · ");
+    renderFilters();
+  }
+  document.getElementById("filters").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-topic]");
+    if (!b) return;
+    activeTopic = b.getAttribute("data-topic");
+    renderResearch();
+  });
+
+  /* ---------- home ---------- */
+  document.getElementById("selectedPubs").innerHTML = PUBS.filter(function (p) { return p.selected; }).map(pubHTML).join("");
+  document.getElementById("homeTopics").innerHTML = TOPICS.map(function (t) {
+    return '<a class="chip" href="#research" data-goto-topic="' + t.code + '"><span class="code">' + t.code + "</span>" + esc(t.label) + "</a>";
+  }).join("");
+  document.getElementById("homeTopics").addEventListener("click", function (e) {
+    var a = e.target.closest("[data-goto-topic]");
+    if (!a) return;
+    activeTopic = a.getAttribute("data-goto-topic");
+    renderResearch();
+  });
+
+  /* ---------- routing ---------- */
+  var PAGES = ["home", "research", "projects", "teaching"];
+  function route() {
+    var h = (location.hash || "").replace("#", "");
+    var page = PAGES.indexOf(h) !== -1 ? h : "home";
+    document.querySelectorAll("[data-page]").forEach(function (s) { s.hidden = s.getAttribute("data-page") !== page; });
+    document.querySelectorAll("[data-tab]").forEach(function (a) {
+      if (a.getAttribute("data-tab") === page) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    var titles = { home: "Gianluca Orsatti", research: "Research · Gianluca Orsatti", projects: "Projects · Gianluca Orsatti", teaching: "Teaching · Gianluca Orsatti" };
+    document.title = titles[page];
+    if (h && PAGES.indexOf(h) !== -1) {
+      var top = document.getElementById("main").getBoundingClientRect().top + window.scrollY - 80;
+      if (window.scrollY > top) window.scrollTo(0, Math.max(0, top));
+    }
+  }
+  window.addEventListener("hashchange", route);
+
+  /* ---------- email ---------- */
+  var user = "gianluca.orsatti", domain = "unito.it";
+  var addr = user + "@" + domain;
+  var emailEl = document.getElementById("email");
+  emailEl.innerHTML = '<a href="mailto:' + addr + '">' + addr + "</a>";
+  document.getElementById("copyEmail").addEventListener("click", function () {
+    var btn = this;
+    function done() { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy"; }, 1600); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(emailEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = "Selected";
+      setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+    }
+    try {
+      navigator.clipboard.writeText(addr).then(done, fallback);
+    } catch (err) { fallback(); }
+  });
+
+
+  renderResearch();
+  route();
+})();
+</script>
+
+</body>
+</html>
